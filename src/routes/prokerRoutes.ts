@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer';
-import * as prokerController from '../controllers/prokerController.js';
+import * as prokerController from '../controllers/prokerControllers.js';
 import { authenticateToken } from '../middlewares/auth.js';
 
 const router: Router = Router();
@@ -26,6 +26,7 @@ router.put(
 router.delete(
   '/:id',
   authenticateToken,
+  upload.none(),
   prokerController.remove
 );
 

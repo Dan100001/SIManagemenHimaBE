@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from 'express';
 import { eq } from 'drizzle-orm';
 import { db } from '../db/index.js';
-import { proker } from '../db/schema.js';
+import { proker } from '../db/proker.js';
 
 // GET ALL
 export async function getAll(_req: Request, res: Response, next: NextFunction) {

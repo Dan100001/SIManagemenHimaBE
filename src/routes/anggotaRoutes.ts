@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer';
-import * as anggotaController from '../controllers/anggotaController.js';
+import * as anggotaController from '../controllers/anggotaControllers.js';
 import { authenticateToken } from '../middlewares/auth.js';
 
 const router: Router = Router();

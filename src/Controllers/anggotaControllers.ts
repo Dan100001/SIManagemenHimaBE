@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from 'express';
 import { eq } from 'drizzle-orm';
 import { db } from '../db/index.js';
-import { anggota } from '../db/schema.js';
+import { anggota } from '../db/anggota.js';
 
 function isValidEmail(email: string) {
   return /^\S+@\S+\.\S+$/.test(email);
@@ -63,7 +63,7 @@ export async function create(req: Request, res: Response, next: NextFunction) {
       });
     }
 
-    await db.insert(anggota).values({
+    await db.insert(anggota as any).values({
       nama,
       noHp,
       alamat,
@@ -120,7 +120,7 @@ export async function update(req: Request, res: Response, next: NextFunction) {
     }
 
     await db
-      .update(anggota)
+      .update(anggota as any)
       .set({
         nama,
         noHp,

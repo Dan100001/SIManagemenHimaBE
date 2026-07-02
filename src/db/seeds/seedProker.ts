@@ -1,14 +1,13 @@
 import { db } from '../index.js';
-import { proker } from '../schema.js';
+import { proker } from '../proker.js';
 
 async function seedProker() {
   await db.insert(proker as any).values([
     {
-      nama_proker: 'Seminar Teknologi',
-      divisi: 'Pendidikan',
-      tanggal_mulai: '2026-07-15',
-      tanggal_selesai: '2026-07-15',
-      status: 'Aktif'
+      nama: 'Seminar Teknologi',
+      deskripsi: 'Pengertian tentang teknologi',
+      lokasi: 'Lab Bersama',
+      tanggal: '2026-07-15'
     }
   ]);
 
